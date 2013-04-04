@@ -38,15 +38,23 @@ while True:
         x = input("Your gross salary: ")
         y = input("Your total dependant: ")
         z = input("Your total unpaid leave for that month: ")
-      
+
         contracted_salary = int(x)
         total_dependant = int(y)
         unpaid_leave = int(z)
-           
-        
+
+        if int(x) < 0:
+            print("Gross salary cannot be less than zero")
+            continue
+        if int(y) < 0:
+            print("Dependant cannot be less than zero")
+        if int(z) > workday_count or int(z) < 0:
+            print(("This month only has"), (workday_count), ("actual working day. Please input the correct unpaid leave"))
+            continue
+
         actual_workday = workday_count - unpaid_leave
         gross_salary = contracted_salary / workday_count * actual_workday
-        
+
         if contracted_salary >= 21000000:
             salary_for_SIHIUI = 21000000
         else: salary_for_SIHIUI = contracted_salary
@@ -84,21 +92,21 @@ while True:
                             if assessible <= 80000000:
                                 pit = assessible*0.3-5850000
                             else: pit = assessible*0.35-9850000
-                            
+
         net_salary = gross_salary - pit - total_insurance
-       
+
         print("Your net salary is: " + str(net_salary))
         print("Your total insurance payment is: " + str(total_insurance))
         print("Your personal income tax is: " + str(pit))
 
     except ValueError:
         print("Please fully input all variables in number")
-    
+
     yes_no_input = input("Do you want to continue? (y/n): ")
 
     if yes_no_input != "y":
         break
-        
+
 print("Thank you and goodbye")
 
 
