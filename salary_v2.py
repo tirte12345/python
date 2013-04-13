@@ -35,22 +35,33 @@ print("Where does my salary go?")
 
 while True:
     try:
-        x = input("Your gross salary: ")
-        y = input("Your total dependant: ")
-        z = input("Your total unpaid leave for that month: ")
+        while True:
+            x = input("Your gross salary: ")
+            if int(x) < 0:
+                print("Gross salary cannot be less than zero. Please input again.")
+            else:
+                break
+        while True:
+            y = input("Your total dependant: ")
+            if int(y) < 0:
+                print("Total dependant cannot be less than zero. Please input again.")
+            else:
+                break
+        while True:
+            z = input("Your total unpaid leave for that month: ")
+            if int(z) < 0:
+                print("Unpaid leave cannot be less than zero.")
+            else:
+                if int(z) > workday_count:
+                    print("This month only has", workday_count, "actual working day. Please input again")
+                else:
+                    break
+
+
 
         contracted_salary = int(x)
         total_dependant = int(y)
         unpaid_leave = int(z)
-
-        if int(x) < 0:
-            print("Gross salary cannot be less than zero")
-            continue
-        if int(y) < 0:
-            print("Dependant cannot be less than zero")
-        if int(z) > workday_count or int(z) < 0:
-            print(("This month only has"), (workday_count), ("actual working day. Please input the correct unpaid leave"))
-            continue
 
         actual_workday = workday_count - unpaid_leave
         gross_salary = contracted_salary / workday_count * actual_workday
