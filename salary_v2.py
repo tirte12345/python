@@ -53,7 +53,7 @@ while True:
                 print("Unpaid leave cannot be less than zero.")
             else:
                 if int(z) > workday_count:
-                    print("This month only has", workday_count,"actual working day. Please input again")
+                    print("This month only has " + str(workday_count) + " actual working day. Please input again.")
                 else:
                     break
 
