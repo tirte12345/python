@@ -53,7 +53,7 @@ while True:
                 print("Unpaid leave cannot be less than zero.")
             else:
                 if int(z) > workday_count:
-                    print("This month only has", workday_count, "actual working day. Please input again")
+                    print("This month only has", workday_count,"actual working day. Please input again")
                 else:
                     break
 
@@ -110,10 +110,10 @@ while True:
         print("Your total insurance payment is: " + str(total_insurance))
         print("Your personal income tax is: " + str(pit))
 
-    except ValueError:
+    except NameError:
         print("Please fully input all variables in number")
 
-    yes_no_input = input("Do you want to continue? (y/n): ")
+    yes_no_input = raw_input("Do you want to continue? (y/n): ")
 
     if yes_no_input != "y":
         break
