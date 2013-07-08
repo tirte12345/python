@@ -76,8 +76,8 @@ while True:
 
         total_insurance = SI+HI+UI
 
-        personal_deduction = int(4000000)
-        dependant_deduction = total_dependant*1600000
+        personal_deduction = int(9000000)
+        dependant_deduction = total_dependant*3600000
 
         total_deduction = personal_deduction + dependant_deduction + total_insurance
 
