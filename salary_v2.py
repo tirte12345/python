@@ -110,7 +110,7 @@ while True:
         print("Your total insurance payment is: " + str(total_insurance))
         print("Your personal income tax is: " + str(pit))
 
-    except NameError:
+    except (NameError, SyntaxError):
         print("Please fully input all variables in number")
 
     yes_no_input = raw_input("Do you want to continue? (y/n): ")
