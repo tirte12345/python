@@ -66,8 +66,8 @@ while True:
         actual_workday = workday_count - unpaid_leave
         gross_salary = contracted_salary / workday_count * actual_workday
 
-        if contracted_salary >= 21000000:
-            salary_for_SIHIUI = 21000000
+        if contracted_salary >= 23000000:
+            salary_for_SIHIUI = 23000000
         else: salary_for_SIHIUI = contracted_salary
 
         SI = salary_for_SIHIUI*0.07
